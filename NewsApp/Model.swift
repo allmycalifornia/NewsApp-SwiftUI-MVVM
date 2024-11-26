@@ -5,8 +5,6 @@
 //  Created by Борис Кравченко on 26.11.2024.
 //
 
-// https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=a9994f5fc52f471b87c6bb1c40a1af4b
-
 import Foundation
 
 // MARK: - News

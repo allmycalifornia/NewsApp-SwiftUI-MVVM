@@ -14,10 +14,25 @@ struct HomeView: View {
     
     // MARK: - Body
     var body: some View {
-        VStack {
-            ForEach(viewModel.topNews, id: \.url) { article in
-                Text(article.title)
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                Text("Top News")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading)
+                    .padding(.top)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(viewModel.topNews, id: \.url) { article in
+                            TopArticleView(article: article)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
             }
+            .background(.secondary.opacity(0.2))
         }
     }
     
@@ -28,3 +43,4 @@ struct HomeView: View {
 #Preview {
     HomeView()
 }
+
