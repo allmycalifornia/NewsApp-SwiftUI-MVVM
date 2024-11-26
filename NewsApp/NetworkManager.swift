@@ -11,8 +11,8 @@ final class NetworkManager {
     
     // MARK: Properties
     static let shared = NetworkManager()
-    let urlNews = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=a9994f5fc52f471b87c6bb1c40a1af4b"
-    let decoder: JSONDecoder = .init()
+    private let urlNews = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=a9994f5fc52f471b87c6bb1c40a1af4b"
+    private let decoder: JSONDecoder = .init()
     
     // MARK: Initializer
     private init() {

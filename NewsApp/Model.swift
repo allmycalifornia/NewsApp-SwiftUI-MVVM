@@ -18,12 +18,11 @@ struct News: Decodable {
 
 // MARK: - Article
 struct Article: Decodable {
-    let source: Source
-    let title, description: String?
+    let title: String
+    let description: String?
     let url: String
     let urlToImage: String?
     let publishedAt: Date
-    let content: String?
 }
 
 // MARK: - Source
