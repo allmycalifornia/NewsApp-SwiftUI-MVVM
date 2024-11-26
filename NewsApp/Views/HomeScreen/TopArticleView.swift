@@ -21,7 +21,7 @@ struct TopArticleView: View {
                         image
                             .resizable()
                             .scaledToFill()
-                            .frame(height: 150)
+                            .frame(width: 260, height: 150)
                             .cornerRadius(10)
                     } else {
                         ZStack {
