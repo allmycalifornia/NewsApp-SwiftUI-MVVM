@@ -10,6 +10,13 @@ struct BottomArticleView: View {
     
     // MARK: - Properties
     let article: Article
+    let imageSize: CGFloat = 120
+    let defaultImageSize: CGFloat = 50
+    let imageCornerRadius: CGFloat = 10
+    let blockWidth: CGFloat = 120
+    let blockHeight: CGFloat = 240
+    let padding: CGFloat = 10
+    let defaultImageOpacity: Double = 0.3
     
     // MARK: - Body
     var body: some View {
@@ -20,20 +27,20 @@ struct BottomArticleView: View {
                         image
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 120, height: 120)
-                            .cornerRadius(10)
+                            .frame(width: imageSize, height: imageSize)
+                            .cornerRadius(imageCornerRadius)
                     } else {
                         ZStack {
                             Rectangle()
-                                .frame(width: 120, height: 120)
+                                .frame(width: imageSize, height: imageSize)
                                 .foregroundStyle(.secondary)
-                                .opacity(0.3)
-                                .cornerRadius(10)
+                                .opacity(defaultImageOpacity)
+                                .cornerRadius(imageCornerRadius)
                             Image(systemName: "photo")
                                 .resizable()
                                 .foregroundStyle(.secondary)
                                 .scaledToFit()
-                                .frame(height: 50)
+                                .frame(height: defaultImageSize)
                         }
                     }
                 }
@@ -48,9 +55,9 @@ struct BottomArticleView: View {
                     .descriptionFont()
             }
         }
-        .frame(width: 120, height: 240)
-        .padding(10)
+        .frame(width: blockWidth, height: blockHeight)
+        .padding(padding)
         .background(.background)
-        .cornerRadius(10)
+        .cornerRadius(imageCornerRadius)
     }
 }

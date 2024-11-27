@@ -11,6 +11,14 @@ import SwiftUI
 struct TopArticleView: View {
     
     let article: Article
+    let imageWidth: CGFloat = 260
+    let imageHeight: CGFloat = 150
+    let defaultImageSize: CGFloat = 150
+    let defaultImageFrame: CGFloat = 50
+    let blockSize: CGFloat = 260
+    let padding: CGFloat = 10
+    let cornerRadius: CGFloat = 10
+    let defaultImageOpacity: Double = 0.3
     
 // MARK: - Body
     var body: some View {
@@ -21,21 +29,21 @@ struct TopArticleView: View {
                         image
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 260, height: 150)
-                            .cornerRadius(10)
+                            .frame(width: imageWidth, height: imageHeight)
+                            .cornerRadius(cornerRadius)
                     } else {
                         ZStack {
                             Rectangle()
-                                .frame(height: 150)
+                                .frame(height: defaultImageSize)
                                 .foregroundStyle(.secondary)
-                                .opacity(0.3)
-                                .cornerRadius(10)
+                                .opacity(defaultImageOpacity)
+                                .cornerRadius(cornerRadius)
                             
                             Image(systemName: "photo")
                                 .resizable()
                                 .foregroundStyle(.secondary)
                                 .scaledToFit()
-                                .frame(height: 50)
+                                .frame(height: defaultImageFrame)
                         }
                     }
                 }
@@ -51,10 +59,10 @@ struct TopArticleView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .frame(width: 260, height: 260)
-        .padding(10)
+        .frame(width: blockSize, height: blockSize)
+        .padding(padding)
         .background(.background)
-        .cornerRadius(10)
+        .cornerRadius(cornerRadius)
     }
 }
 
